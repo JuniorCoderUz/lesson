@@ -1,36 +1,61 @@
-// /*const numberOfFilms = +prompt("How many films have you seen?");
+const numberOfFilms = +prompt("How many films have you seen?", 1);
 
-// const questionOne = prompt("One of films that you've seen recently", "");
-// const questionTwo = prompt(`How do you rank the film - ${questionOne}`);
+const personalMovieDB = {
+  count: numberOfFilms,
+  movies: {},
+  actors: {},
+  genres: [],
+  private: false
+};
+for (let i = 0; i < 2; i++) {
+  const questionOne = prompt("One of films that you've seen recently", ''),
+    questionTwo = prompt(`How do you rank the film - ${questionOne}`);
 
-// const personalMovieDB = {
-//   count: numberOfFilms,
-//   movies: {},
-//   actors: {},
-//   genres: [],
-//   private: false
-// };
+  if (questionOne != null && questionTwo != null && questionOne != '' && questionTwo != '' && questionOne.length < 50) {
+    personalMovieDB.movies["questionOne"] = questionTwo;
+    console.log("Done");
 
-// personalMovieDB.movies["questionOne"] = questionTwo;
+  } else {
+    alert('Try again');
+    console.log("Error 404");
+    i--;
+  }
+}
 
-// console.log(personalMovieDB);
+if (personalMovieDB.count < 10) {
+  alert("You watch too little TV");
+} else if (personalMovieDB.count > 10) {
+  alert("You are a classic spectator");
+} else if (personalMovieDB > 30) {
+  alert("You are a movie fun");
+} else {
+  alert("Please try again");
+}
+
+console.log(personalMovieDB);
+
+
+
 // */
 // /////////////////////////////////////////////////////////////////////////////
-// /*
-// Новая тема про операторы
-// */
-// const num = 100;
 
-// //Это оператор if-else для проверки кокогото конкретного ответа
-// if (num == 30) {
-//   console.log("Не правдо");
-// } else if (num == 90) {
-//   console.log('Нимношко');
-// } else if (num == 100) {
-//   console.log("Ты качок");
-// } else {
-//   console.log("Ты долб@#&");
-// }
+/*
+// Новая тема про операторы
+*/
+/* const num = 100;
+
+Это оператор if-else для проверки кокогото конкретного ответа
+if (num == 30) {
+  console.log("Не правдо");
+} else if (num == 90) {
+  console.log('Нимношко');
+} else if (num == 100) {
+  console.log("Ты качок");
+} else {
+  console.log("Ты долб@#&");
+}
+*/
+
 
 // //Это тернарный оператор он сокрашает код
 // // (num == 100) ? console.log("You tell true") : console.log("Ты гонд0#");
@@ -62,6 +87,6 @@ let test = 1;
 
 // let num = 1;
 
-for (let num = 1; num == 8; num++) {
-  console.log(num);
-}
+// for (let num = 1; num == 8; num++) {
+//   console.log(num);
+// }
