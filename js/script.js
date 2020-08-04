@@ -13,35 +13,25 @@ let infoOne,
   questionTwo,
   num = 0;
 
-for (let i = 0; i <= 2; i++) {
+do {
   questionOne = prompt("One of films that you've seen recently", '');
   questionTwo = prompt(`How do you rank the film - ${questionOne}`);
   if (questionOne != null && questionOne != '' && questionOne.length < 50 && questionTwo != null && questionTwo != '') {
     personalMovieDB.movies["questionOne"] = questionTwo;
-    console.log("done")
+    console.log("DONE");
+    num++;
+  } else {
+    alert("Sorry Try again");
+    continue;
   }
-  else {
-    alert("Sorry Try Again");
-    i--;
+  if (personalMovieDB.count > 10) {
+    alert("You watching too few tv");
+  } else if (personalMovieDB.count < 20) {
+    alert("You're classic spectator");
+  } else if (personalMovieDB.count > 30) {
+    alert("You're watch tv a fun");
+  } else {
+    alert("Sorry try again");
   }
 
-
-}
-
-if (personalMovieDB.count <= 10) {
-  alert("You watch too little TV");
-} else if (personalMovieDB.count >= 20) {
-  alert("You're classic spectator");
-} else if (personalMovieDB.count > 30) {
-  alert("You're a movie fan");
-} else {
-  alert("Error 404 Try again");
-}
-
-
-
-
-
-console.log(personalMovieDB);
-console.log(infoOne);
-
+} while (num < 3);
