@@ -1,29 +1,20 @@
-"use strict";
-/* */
-function one(name) {
-  console.log(`Hello ${name}`);
-  let fullName = `Obloqulov ${name}`;
-  return fullName;
-}
-one("SultonAliXan");
-
-let Two = function (userName) {
-  console.log(`hello ${userName}`);
-};
-Two("Junior_Coder_Uz");
-
-one("SultonAlixan");
-
-let a = 3;
-let b = 2;
-
-const calc = (a, b) => a+b;
-calc(4 + 6);
+const testOne = "tESt";
+const arr = "Hello World I'm";
+// console.log(testOne.length);
+console.log(testOne.toUpperCase());
+console.log(testOne.toLowerCase());
+console.log(arr.indexOf("W"));
+console.log(arr.slice(6, 11));
+console.log(arr.slice(0, 5));
+console.log(arr.substring(6, 11));
+console.log(arr.substr(12, 3));
 
 
-function calcs(x, y) {
-  console.log(x + y);
+let num = 12.33333;
+console.log(num);
+console.log(Math.round(num));
 
-}
+let test = "12.33333px";
 
-calcs(2, 1);
+console.log(Math.round(parseFloat(test)));
+console.log(test);
