@@ -1,20 +1,75 @@
-const testOne = "tESt";
-const arr = "Hello World I'm";
-// console.log(testOne.length);
-console.log(testOne.toUpperCase());
-console.log(testOne.toLowerCase());
-console.log(arr.indexOf("W"));
-console.log(arr.slice(6, 11));
-console.log(arr.slice(0, 5));
-console.log(arr.substring(6, 11));
-console.log(arr.substr(12, 3));
+'use strict';
+let numberOfFilms;
+function start() {
+  numberOfFilms = +prompt("How many films have you seen?", 1);
+  while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+    numberOfFilms = +prompt("How many films have you seen?", 1);
+  }
+}
+
+start();
 
 
-let num = 12.33333;
-console.log(num);
-console.log(Math.round(num));
+const personalMovieDB = {
+  count: numberOfFilms,
+  movies: {},
+  actors: {},
+  genres: [],
+  private: false
+};
+let infoOne,
+  questionOne,
+  questionTwo,
+  num = 0;
 
-let test = "12.33333px";
+function rememberMyFilm() {
+  do {
+    questionOne = prompt("One of films that you've seen recently", '');
+    questionTwo = prompt(`How do you rank the film - ${questionOne}`);
+    if (questionOne != null && questionOne != '' && questionOne.length < 50 && questionTwo != null && questionTwo != '') {
+      personalMovieDB.movies["questionOne"] = questionTwo;
+      console.log("done");
+      console.log("DONE");
+      num++;
+    } else {
+      alert("Sorry Try again");
+      continue;
+    }
+  } while (num < 3);
+}
 
-console.log(Math.round(parseFloat(test)));
-console.log(test);
+rememberMyFilm();
+
+function detectPersonalLevel() {
+  if (personalMovieDB.count <= 10) {
+    alert("You watching too few tv");
+  } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+    alert("You're classic spectator");
+  } else if (personalMovieDB.count >= 30) {
+    alert("You're watch tv a fun");
+  } else {
+    alert("Sorry try again");
+  }
+
+}
+
+detectPersonalLevel();
+
+
+function showMyDB(hidden) {
+  if (!hidden) {
+    console.log(personalMovieDB);
+  }
+}
+showMyDB(personalMovieDB.private);
+
+
+function writeYourGenres() {
+  for (let i = 1; i <= 3; i++) {
+    personalMovieDB.genres[i - 1] = prompt(`You are favorite genre at number ${i}`);
+  }
+}
+
+writeYourGenres();
+
+console.log(infoOne);
