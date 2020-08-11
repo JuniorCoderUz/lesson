@@ -19,3 +19,10 @@ one();
 two();
 
 
+function test(three, callback) {
+  console.log(three);
+  callback();
+}
+
+test("hello",(a) => console.log("hello junior")
+);
