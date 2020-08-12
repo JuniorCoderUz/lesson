@@ -1,3 +1,4 @@
+"use strict";
 const options = {
   name: 'computer',
   width: 1600,
@@ -5,15 +6,19 @@ const options = {
   colors: {
     border: 'black',
     background: 'red'
+  }, title: function () {
+    console.log("toTitleCase");
   }
 };
+
+console.log(Object.keys(options).length);
 
 console.log(options);
 
 for (let key in options) {
-  if (typeof(options[key]) === 'object') {
+  if (typeof (options[key]) === 'object') {
     for (let i in options[key]) {
-      console.log(`Properties ${i} have value ${options[key] [i]}`);
+      console.log(`Properties ${i} have value ${options[key][i]}`);
     }
   }
   else {
@@ -21,3 +26,10 @@ for (let key in options) {
   }
 }
 
+const { border, background } = options.colors;
+
+delete options["name"];
+
+options.title();
+
+console.log(border);
