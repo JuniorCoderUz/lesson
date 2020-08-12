@@ -1,28 +1,23 @@
-"use strict";
-let textOne = "Hello World",
-  textTwo = [1, 2, 3, 4];
+const options = {
+  name: 'computer',
+  width: 1600,
+  height: 900,
+  colors: {
+    border: 'black',
+    background: 'red'
+  }
+};
 
+console.log(options);
 
-function one() {
-  setTimeout(function () {
-    console.log(1);
-  }, 500);
-  console.log(textOne.slice(0, 5));
-  console.log(textOne.indexOf('W'));
+for (let key in options) {
+  if (typeof(options[key]) === 'object') {
+    for (let i in options[key]) {
+      console.log(`Properties ${i} have value ${options[key] [i]}`);
+    }
+  }
+  else {
+    console.log(`properties ${key} have value ${options[key]}`);
+  }
 }
 
-function two() {
-  console.log(2);
-}
-
-one();
-two();
-
-
-function test(three, callback) {
-  console.log(three);
-  callback();
-}
-
-test("hello",(a) => console.log("hello junior")
-);
