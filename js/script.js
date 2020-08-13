@@ -1,35 +1,31 @@
 "use strict";
-const options = {
-  name: 'computer',
-  width: 1600,
-  height: 900,
+const informations = {
+  name: 'bugatti',
+  motor: '1.6',
+  maxSpeed: 465,
   colors: {
-    border: 'black',
-    background: 'red'
-  }, title: function () {
-    console.log("toTitleCase");
+    body: 'black',
+    border: 'red'
+  },
+  price: '150.000.000$',
+  print: function (carName) {
+    console.log(`${carName}`);
   }
 };
 
-console.log(Object.keys(options).length);
 
-console.log(options);
+// console.log(Object.keys(informations).length);
 
-for (let key in options) {
-  if (typeof (options[key]) === 'object') {
-    for (let i in options[key]) {
-      console.log(`Properties ${i} have value ${options[key][i]}`);
+
+for (let information in informations) {
+  if (typeof (informations[information]) === 'object') {
+    for (let key in informations[information]) {
+      console.log(`Propreties ${key} have values ${informations[information][key]}`);
     }
   }
   else {
-    console.log(`properties ${key} have value ${options[key]}`);
+    console.log(`Propreties ${information} have values ${informations[information]}`);
   }
 }
 
-const { border, background } = options.colors;
-
-delete options["name"];
-
-options.title();
-
-console.log(border);
+informations.print('audi');
