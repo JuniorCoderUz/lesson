@@ -1,31 +1,34 @@
 "use strict";
-const informations = {
-  name: 'bugatti',
-  motor: '1.6',
-  maxSpeed: 465,
-  colors: {
-    body: 'black',
-    border: 'red'
-  },
-  price: '150.000.000$',
-  print: function (carName) {
-    console.log(`${carName}`);
-  }
-};
+
+const numbers = [2, 8, 9, 7, 1, 10, 5, 3, 4, 6];
+
+console.log(numbers.sort((a, b) => {
+  return a - b;
+}));
 
 
-// console.log(Object.keys(informations).length);
+numbers.push(9);
+numbers.push(10);
+
+numbers.forEach(function (item, n, values) {
+  console.log(`${n}: ${item} have values ${values}`);
+});
 
 
-for (let information in informations) {
-  if (typeof (informations[information]) === 'object') {
-    for (let key in informations[information]) {
-      console.log(`Propreties ${key} have values ${informations[information][key]}`);
-    }
-  }
-  else {
-    console.log(`Propreties ${information} have values ${informations[information]}`);
-  }
+numbers.pop();
+console.log(numbers);
+
+for (let i = 0; i < numbers.length; i++) {
+  console.log(numbers[i]);
 }
 
-informations.print('audi');
+numbers.pop();
+for (let item of numbers) {
+  console.log(item);
+}
+
+
+const questionOne = prompt("Please enter your name and your friends name", "");
+const arr = questionOne.split(", ");
+console.log(arr.join('; '));
+
