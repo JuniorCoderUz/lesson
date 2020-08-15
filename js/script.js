@@ -1,34 +1,41 @@
 "use strict";
 
-const numbers = [2, 8, 9, 7, 1, 10, 5, 3, 4, 6];
 
-console.log(numbers.sort((a, b) => {
-  return a - b;
-}));
+function myFunction(main) {
+  let objsave = {};
+  let key;
 
+  for (key in main) {
+    objsave[key] = main[key];
 
-numbers.push(9);
-numbers.push(10);
+  }
 
-numbers.forEach(function (item, n, values) {
-  console.log(`${n}: ${item} have values ${values}`);
-});
-
-
-numbers.pop();
-console.log(numbers);
-
-for (let i = 0; i < numbers.length; i++) {
-  console.log(numbers[i]);
+  return objsave;
 }
 
-numbers.pop();
-for (let item of numbers) {
-  console.log(item);
-}
+const theNumbers = {
+  one: 1,
+  two: 2,
+  three: 3,
+  four: 4,
+  five: 5,
+  six: 6,
+  seven: 7,
+  eight: 8,
+  nine: 9,
+  ten: 10,
+  favorites: {
+    bla: 16,
+    kel: 9,
+    zero: 0
+  }
+};
 
 
-const questionOne = prompt("Please enter your name and your friends name", "");
-const arr = questionOne.split(", ");
-console.log(arr.join('; '));
+let testNums;
+testNums.myFunction(theNumbers);
 
+testNums.six = 16;
+testNums.favorites.kel = 5;
+console.log(theNumbers);
+console.log(testNums);
