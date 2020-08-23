@@ -1,44 +1,32 @@
 "use strict";
-//To String
+// let x = 5;
+// alert(x);
+/////////////////////////////////////////////
+// let testBool = [] + false + null + true;
+// console.log(Boolean(testBool));
+/////////////////////////////////////////////
+// let y = 1; let x = y = 2; alert(x); 
+/////////////////////////////////////////////
+// let testNum = [] + 1 + 2;
+// console.log(testNum.length);
+/////////////////////////////////////////////
+// console.log("25"[1]);
+/////////////////////////////////////////////
+// console.log(Boolean(2 && 1 && null && 0 && undefined));
+/////////////////////////////////////////////
+// let a = true,
+//   b = false;
+// console.log(Boolean(!!(a && b)));
+/////////////////////////////////////////////
+// alert(Boolean(null || 20 && 10 || 4));
+/////////////////////////////////////////////
+// let a = [1, 2, 3],
+//   b = [1, 2, 3];
+// console.log(a === b);
+/////////////////////////////////////////////
+// alert(+"Infinity");
+/////////////////////////////////////////////
+// console.log(Boolean("Ёжик" > "яблоко"));
+/////////////////////////////////////////////
+console.log(0 || "" || 2 || undefined || true || false);
 
-// 1) method
-console.log(typeof (String(undefined)));
-console.log(typeof (String(30)));
-///////////////////////////////////////////
-console.log(" ");
-// 2) method
-console.log(typeof (Number + ''));
-const numHref = 16;
-console.log("https://instagram.com/story/" + numHref);
-////////////////////////////////////////////////////////////////////////////////////////
-
-console.log(" ");
-
-//To Number 
-// 1) method
-console.log(typeof (Number('10')));
-
-// 2) method
-console.log(typeof (+"2"));
-
-// 3) method 
-console.log(parseInt("40px", 10));
-////////////////////////////////////////////////////////////////////////////////////////////////
-
-console.log(" ");
-
-//To Boolean
-// 0, '', null, undefined, NaN //is false
-
-// 1) method
-let numOne = 1,
-  numTwo = 0;
-
-if (numOne) {
-  console.log(typeof (Boolean("Hello Baby")));
-}
-/////////////////////////////////////////////////
-// 2) method
-console.log(typeof (Boolean('1')));
-// 3) method
-console.log(typeof (Boolean(!!'1')));
