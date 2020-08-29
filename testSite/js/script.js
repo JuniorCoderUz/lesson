@@ -13,14 +13,36 @@
 5) Добавить нумерацию выведенных фильмов */
 
 'use strict';
+const ads = document.querySelectorAll('.promo__adv img'),
+    poster = document.querySelector('.promo__bg'),
+    movieGenre = poster.querySelector('.promo__genre'),
+    movieList = document.querySelector('.promo__interactive-list'),
+    movieItem = movieList.querySelectorAll('.promo__interactive-item');
+
+
 
 const movieDB = {
     movies: [
         "Логан",
-        "Лига справедливости",
-        "Ла-ла лэнд",
         "Одержимость",
-        "Скотт Пилигрим против..."
+        "Ла-ла лэнд",
+        "Скотт Пилигрим против...",
+        "Лига справедливости",
     ]
 };
+movieDB['movies'].sort();
 
+
+
+ads.forEach(item => {
+    item.remove();
+});
+
+movieGenre.textContent = "Драма";
+poster.style.backgroundImage = 'url(img/bg.jpg)';
+movieList.innerHTML = "";
+movieDB['movies'].forEach((film, n) => {
+    movieList.innerHTML += `<li class="promo__interactive-item">${n + 1} ${film}
+    <div class="delete"></div>
+    </li>`;
+});
