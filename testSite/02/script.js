@@ -19,7 +19,8 @@ let q = 0;
 const actionsElement = (e) => {
   console.log(e.currentTarget);
   console.log(e.type);
-  e.target.style.backgroundColor = 'red';
+  e.target
+    .style.backgroundColor = 'red';
   // q++;
   // e.target.remove();
   // if (q == 1) {
